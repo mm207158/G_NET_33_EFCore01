@@ -136,9 +136,7 @@ namespace G_NET_33_EFCore01
                 Console.WriteLine($"  {cat.Name} | Active: {cat.IsActive} | {cat.Description}");
             }
 
-            Console.WriteLine("\n===========================================");
-            Console.WriteLine("   Database demonstration complete!");
-            Console.WriteLine("===========================================");
+            
         }
     }
 }

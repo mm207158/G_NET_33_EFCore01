@@ -7,9 +7,7 @@ namespace G_NET_33_EFCore01
     {
         static async Task Main(string[] args)
         {
-            Console.WriteLine("===========================================");
-            Console.WriteLine("   ReadMore Books - Database System");
-            Console.WriteLine("===========================================\n");
+          
 
             using var context = new ReadMoreBookContext();
 

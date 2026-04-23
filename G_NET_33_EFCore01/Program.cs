@@ -16,7 +16,7 @@ namespace G_NET_33_EFCore01
                 ? "  Database created successfully!\n"
                 : "    Database already exists.\n");
 
-            if (created)
+            if (!context.Books.Any())
             {
                 var fiction = new Category
                 {

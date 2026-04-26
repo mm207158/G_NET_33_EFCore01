@@ -95,7 +95,7 @@ namespace G_NET_33_EFCore01
             }
 
             Console.WriteLine(">>> All Books in Inventory:");
-            Console.WriteLine(new string('-', 65));
+
 
             var books = context.Books
                 .Select(b => new
@@ -106,10 +106,10 @@ namespace G_NET_33_EFCore01
                     b.NumberOfPages,
                     b.YearPublished,
                     b.IsInStock,
-                    Author = (b.Author.FirstName ?? "") + " " + (b.Author.LastName ?? ""),
-                    Category = b.Category.Name ?? "N/A"
-                })
-                .ToList();
+                    Author = (b.Author!.FirstName ?? "") + " " + (b.Author.LastName ?? ""),
+                    Category = b.Category!.Name ?? "N/A"
+                });
+               
 
             foreach (var book in books)
             {
@@ -125,13 +125,13 @@ namespace G_NET_33_EFCore01
             }
 
             Console.WriteLine("\n>>> Authors:");
-            foreach (var author in context.Authors.ToList())
+            foreach (var author in context.Authors)
             {
                 Console.WriteLine($"  {author.FirstName} {author.LastName} | {author.Email} | DOB: {author.DateOfBirth}");
             }
 
             Console.WriteLine("\n>>> Categories:");
-            foreach (var cat in context.Categories.ToList())
+            foreach (var cat in context.Categories)
             {
                 Console.WriteLine($"  {cat.Name} | Active: {cat.IsActive} | {cat.Description}");
             }
